@@ -1,0 +1,202 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Ciemne tło */
+    color: #e0e0e0;
+}
+
+/* Menu */
+.main-nav {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #e67e22;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.nav-item.active {
+    color: #e67e22;
+}
+
+/* Sekcja Hero (Nagłówek) */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=1000'); /* Przykładowe tło */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 10px;
+}
+h2 {
+    text-align: center;
+}
+.cta-button {
+    display: inline-block;
+    background: #e67e22;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: #d35400;
+    transform: scale(1.05);
+}
+
+/* Grid z usługami */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #1e1e1e;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 5px solid #e67e22;
+    transition: 0.3s;
+}
+
+.card:hover {
+    background: #252525;
+}
+
+.card h3 { color: #e67e22; margin-top: 0; }
+
+/* Formularz */
+.form-section {
+    background: #1e1e1e;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.premium-form {
+    max-width: 500px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.premium-form input, .premium-form textarea {
+    background: #2c2c2c;
+    border: 1px solid #444;
+    color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.premium-form button {
+    background: #e67e22;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.brands {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    color: #888;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Responsywność */
+@media (max-width: 600px) {
+    .hero h1 { font-size: 1.8rem; }
+    .main-nav { flex-direction: column; align-items: center; gap: 10px; }
+}
+.map-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: rgba(255,255,255,0.1); /* Jasne tło dla strony głównej, możesz zmienić na ciemniejsze dla strony auto */
+}
+
+.map-container {
+    margin-top: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+}
+
+/* Na telefonie mapa może być nieco niższa */
+@media (max-width: 600px) {
+    .map-container iframe {
+        height: 300px;
+    }
+}
+/* Styl dla kontenera przycisków w nagłówku */
+.header-contact {
+    display: flex;
+    flex-direction: column; /* Jeden pod drugim na telefonie */
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .header-contact {
+        flex-direction: row; /* Obok siebie na komputerze */
+        justify-content: center;
+    }
+}
+
+/* Styl przycisku E-mail */
+.email-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.email-button:hover {
+    background-color: #ffffff;
+    color: #333; /* Zmienia kolor tekstu na ciemny przy najechaniu */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}

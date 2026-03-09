@@ -1,0 +1,259 @@
+/* --- FUNDAMENTY --- */
+:root {
+    --primary-color: #e67e22; /* Ciepły pomarańczowy */
+    --secondary-color: #2c3e50; /* Ciemny granat do tekstów */
+    --bg-color: #ffffff; /* Białe tło */
+    --text-color: #333333;
+    --light-bg: #f9f9f9;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- NAWIGACJA --- */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.nav-item:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* --- HERO (Nagłówek) --- */
+.hero {
+    background-color: var(--light-bg);
+    padding: 80px 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #d35400;
+    transform: translateY(-3px);
+}
+
+/* --- USŁUGI --- */
+.services {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.service-card .icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+/* --- KONTAKT & FORMULARZ --- */
+.contact-section {
+    background-color: var(--light-bg);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #1a252f;
+}
+
+/* --- STOPKA --- */
+footer {
+    background-color: var(--secondary-color);
+    color: rgba(255,255,255,0.7);
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- RESPONYWNOŚĆ (TELEFON) --- */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+.map-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: rgba(255,255,255,0.1); /* Jasne tło dla strony głównej, możesz zmienić na ciemniejsze dla strony auto */
+}
+
+.map-container {
+    margin-top: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(239, 237, 237, 0.1);
+    border: 1px solid #ddd;
+}
+
+/* Na telefonie mapa może być nieco niższa */
+@media (max-width: 600px) {
+    .map-container iframe {
+        height: 300px;
+    }
+}
+/* Styl dla kontenera przycisków w nagłówku */
+.header-contact {
+    display: flex;
+    flex-direction: column; /* Jeden pod drugim na telefonie */
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .header-contact {
+        flex-direction: row; /* Obok siebie na komputerze */
+        justify-content: center;
+    }
+}
+
+/* Styl przycisku E-mail */
+.email-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: transparent;
+    color: #302d2d;
+    border: 2px solid #323232;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.email-button:hover {
+    background-color: #2d2d2d;
+    color: #f5f5f5; /* Zmienia kolor tekstu na ciemny przy najechaniu */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
