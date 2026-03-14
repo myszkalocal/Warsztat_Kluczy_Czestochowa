@@ -55,6 +55,27 @@ body {
 }
 
 /* --- HERO --- */
+/* Wklej to w sekcji HERO w pliku style_klucze.css */
+
+.hero h1 {
+    font-size: 3.2rem; /* Większy, wyraźny napis */
+    font-weight: 800;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+    line-height: 1.1;
+}
+
+/* Dodajemy ozdobną linię pod tytułem */
+.hero h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
 .hero {
     background-color: var(--light-bg);
     padding: 100px 20px;
