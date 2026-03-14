@@ -1,8 +1,8 @@
 /* --- FUNDAMENTY --- */
 :root {
-    --primary-color: #e67e22;
-    --secondary-color: #2c3e50;
-    --bg-color: #ffffff;
+    --primary-color: #e67e22; /* Ciepły pomarańczowy */
+    --secondary-color: #2c3e50; /* Ciemny granat do tekstów */
+    --bg-color: #ffffff; /* Białe tło */
     --text-color: #333333;
     --light-bg: #f9f9f9;
 }
@@ -31,7 +31,6 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .nav-item {
@@ -40,45 +39,24 @@ body {
     margin: 0 15px;
     font-weight: 600;
     font-size: 0.9rem;
-    padding: 8px 15px;
-    border-radius: 25px;
+    padding: 5px 10px;
+    border-radius: 4px;
     transition: 0.3s;
 }
 
 .nav-item:hover {
-    background-color: rgba(255,255,255,0.15);
+    background-color: rgba(255,255,255,0.1);
 }
 
 .nav-item.active {
-    background-color: var(--primary-color);
-    color: white;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
 }
 
-/* --- HERO --- */
-/* Wklej to w sekcji HERO w pliku style_klucze.css */
-
-.hero h1 {
-    font-size: 3.2rem; /* Większy, wyraźny napis */
-    font-weight: 800;
-    color: var(--secondary-color);
-    margin-bottom: 10px;
-    letter-spacing: -1px;
-    line-height: 1.1;
-}
-
-/* Dodajemy ozdobną linię pod tytułem */
-.hero h1::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: var(--primary-color);
-    margin: 20px auto 0;
-    border-radius: 2px;
-}
+/* --- HERO (Nagłówek) --- */
 .hero {
     background-color: var(--light-bg);
-    padding: 100px 20px;
+    padding: 80px 0;
     text-align: center;
     border-bottom: 1px solid #eee;
 }
@@ -90,91 +68,195 @@ body {
     margin-bottom: 15px;
 }
 
-/* Przyciski w nagłówku */
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* Styl dla kontenera przycisków w nagłówku */
 .header-contact {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Jeden pod drugim na telefonie */
     align-items: center;
     gap: 15px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 @media (min-width: 768px) {
-    .header-contact { flex-direction: row; justify-content: center; }
+    .header-contact {
+        flex-direction: row; /* Obok siebie na komputerze */
+        justify-content: center;
+    }
 }
 
 .cta-button {
     display: inline-block;
     background-color: var(--primary-color);
     color: #ffffff;
-    padding: 15px 35px;
+    padding: 15px 30px;
     text-decoration: none;
     font-weight: 700;
     border-radius: 50px;
     text-transform: uppercase;
     transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
 }
 
+.cta-button:hover {
+    background-color: #d35400;
+    transform: translateY(-3px);
+}
+
+/* Styl przycisku E-mail */
 .email-button {
     display: inline-block;
-    padding: 14px 30px;
+    padding: 12px 25px;
     background-color: transparent;
-    color: var(--secondary-color);
-    border: 2px solid var(--secondary-color);
+    color: #302d2d;
+    border: 2px solid #323232;
     text-decoration: none;
     font-weight: 700;
     border-radius: 50px;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .email-button:hover {
-    background-color: var(--secondary-color);
-    color: white;
+    background-color: #2d2d2d;
+    color: #f5f5f5; /* Zmienia kolor tekstu na ciemny przy najechaniu */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
 /* --- USŁUGI --- */
+.services {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    padding: 40px 0;
 }
 
 .service-card {
-    background: white;
+    background-color: #ffffff;
     padding: 40px;
-    border-radius: 12px;
+    border-radius: 8px;
     border: 1px solid #eee;
     transition: 0.3s;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
-/* --- FORMULARZ --- */
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 15px;
+.service-card .icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
     margin-bottom: 15px;
+}
+
+/* --- KONTAKT & FORMULARZ --- */
+.contact-section {
+    background-color: var(--light-bg);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    margin-bottom: 20px;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #1a252f;
 }
 
 /* --- MAPA --- */
+.map-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: rgba(255,255,255,0.1); /* Jasne tło */
+}
+
 .map-container {
     margin-top: 30px;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(239, 237, 237, 0.1);
+    border: 1px solid #ddd;
 }
 
+/* Na telefonie mapa może być nieco niższa */
+@media (max-width: 600px) {
+    .map-container iframe {
+        height: 300px;
+    }
+}
+
+/* --- STOPKA --- */
 footer {
-    background: var(--secondary-color);
-    color: white;
-    padding: 40px 20px;
+    background-color: var(--secondary-color);
+    color: rgba(255,255,255,0.7);
+    padding: 40px 0;
     text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- RESPONYWNOŚĆ --- */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
 }
