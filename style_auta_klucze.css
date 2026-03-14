@@ -30,6 +30,32 @@ body {
 .nav-item.active { color: #e67e22; }
 
 /* --- HERO --- */
+/* Wklej to w sekcji HERO w pliku style_auta_klucze.css */
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.5); /* Głębia */
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+/* Podświetlenie części tytułu na pomarańczowo */
+/* Jeśli w HTML dasz: <h1>Serwis <span>Kluczy</span></h1> */
+.hero h1 span {
+    color: #e67e22;
+    display: inline-block;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: #bbb;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
 .hero {
     background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), 
                 url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=1000');
