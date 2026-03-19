@@ -58,7 +58,12 @@ body {
     color: #fff;
     margin-bottom: 15px;
 }
-
+.hero h2 {
+    font-size: 3rem; /* Trochę większy dla lepszego efektu */
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 15px;
+}
 .hero h1 span {
     color: #e67e22; /* Pomarańczowy akcent */
 }
