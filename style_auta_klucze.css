@@ -1,18 +1,24 @@
-/* --- DODAJ TO NA POCZĄTKU CSS --- */
+/* --- USTAWIENIA OGÓLNE --- */
+* {
+    box-sizing: border-box;
+}
+
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
+
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #121212; /* Ciemne tło */
+    background-color: #121212; /* Ciemne tło strony */
     color: #e0e0e0;
+    line-height: 1.6;
 }
 
-/* Menu */
+/* --- MENU NAWIGACYJNE --- */
 .main-nav {
     background: #000;
     display: flex;
@@ -29,52 +35,50 @@ body {
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-item:hover {
+    color: #e67e22;
 }
 
 .nav-item.active {
     color: #e67e22;
 }
 
-/* --- POPRAWIONA SEKCJA HERO --- */
+/* --- SEKCJA HERO (NAGŁÓWEK GŁÓWNY) --- */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=1000');
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=1000');
     background-size: cover;
     background-position: center;
-    min-height: 60vh; /* Zapewnia odpowiednią wysokość */
+    min-height: 60vh;
     display: flex;
-    align-items: center; /* Centrowanie w pionie */
-    justify-content: center; /* Centrowanie w poziomie */
+    align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 60px 0;
 }
 
-.hero .overlay {
-    width: 100%;
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
-.hero h1 {
-    font-size: 3rem; /* Trochę większy dla lepszego efektu */
-    font-weight: 900;
-    color: #fff;
-    margin-bottom: 15px;
-}
-.hero h2 {
-    font-size: 3rem; /* Trochę większy dla lepszego efektu */
-    font-weight: 900;
-    color: #fff;
-    margin-bottom: 15px;
-}
 .hero h1 span {
-    color: #e67e22; /* Pomarańczowy akcent */
+    color: #e67e22;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #ccc;
     margin-bottom: 30px;
 }
 
-/* --- POPRAWIONE PRZYCISKI --- */
+/* --- PRZYCISKI W HERO --- */
 .header-contact {
     display: flex;
     flex-direction: column;
@@ -85,7 +89,7 @@ body {
 
 @media (min-width: 768px) {
     .header-contact {
-        flex-direction: row; /* Przyciski obok siebie na komputerze */
+        flex-direction: row;
     }
 }
 
@@ -113,52 +117,106 @@ body {
     transition: 0.3s;
 }
 
-/* Efekty najechania - żeby było dynamicznie */
-.cta-button:hover {
-    background: #d35400;
-    border-color: #d35400;
+.cta-button:hover, .email-button:hover {
     transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
 }
 
 .email-button:hover {
     background: white;
     color: #121212;
-    transform: translateY(-3px);
 }
-/* Grid z usługami */
+
+/* --- NOWA SEKCJA SPECJALIZACJE (JASNE TŁO) --- */
+.premium-services {
+    background-color: #ffffff; /* Kontrastowe jasne tło */
+    padding: 80px 0;
+    color: #333;
+}
+
+.premium-services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+/* Dekoracyjna linia pod H2 */
+.premium-services h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #e67e22;
+    margin: 15px auto 0;
+}
+
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 40px 20px;
-    max-width: 1100px;
-    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .card {
-    background: #1e1e1e;
-    padding: 25px;
-    border-radius: 10px;
-    border-left: 5px solid #e67e22;
-    transition: 0.3s;
+    background: #f9f9f9;
+    padding: 40px 30px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    transition: 0.4s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    text-align: left;
 }
 
 .card:hover {
-    background: #252525;
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    background: #fff;
 }
 
-.card h3 { color: #e67e22; margin-top: 0; }
+.card h3 { 
+    color: #e67e22; 
+    margin-top: 0;
+    font-size: 1.4rem;
+}
 
-/* Formularz */
+.card p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.card.highlight {
+    border: 2px solid #e67e22;
+    background: #fff8f2;
+}
+
+/* --- MARKI I FORMULARZ --- */
+.brands {
+    text-align: center;
+    padding: 40px 20px;
+    background: #121212;
+    color: #888;
+    font-style: italic;
+}
+
 .form-section {
     background: #1e1e1e;
-    padding: 50px 20px;
+    padding: 80px 20px;
     text-align: center;
 }
 
+.form-section h2 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
 .premium-form {
-    max-width: 500px;
-    margin: 20px auto;
+    max-width: 600px;
+    margin: 30px auto;
     display: flex;
     flex-direction: column;
 }
@@ -169,59 +227,57 @@ body {
     color: white;
     padding: 15px;
     margin-bottom: 15px;
-    border-radius: 5px;
+    border-radius: 8px;
     font-family: inherit;
+    font-size: 1rem;
 }
 
 .premium-form button {
     background: #e67e22;
     color: white;
     border: none;
-    padding: 15px;
+    padding: 18px;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
 }
 
-.brands {
-    text-align: center;
-    padding: 20px;
-    font-style: italic;
-    color: #888;
+.premium-form button:hover {
+    background: #d35400;
 }
 
-/* MAPA */
+/* --- MAPA --- */
 .map-section {
-    padding: 60px 0;
+    padding: 80px 0;
     text-align: center;
-    background-color: #1e1e1e; /* Ciemne tło dla strony auto */
+    background-color: #121212;
 }
 
 .map-container {
     margin-top: 30px;
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border: 1px solid #ddd;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 2px solid #333;
 }
 
-/* Na telefonie mapa może być nieco niższa */
-@media (max-width: 600px) {
-    .map-container iframe {
-        height: 300px;
-    }
-}
-
+/* --- STOPKA --- */
 footer {
+    background: #000;
     text-align: center;
-    padding: 30px;
-    font-size: 0.8rem;
-    color: #666;
+    padding: 40px;
+    font-size: 0.9rem;
+    color: #555;
+    border-top: 1px solid #222;
 }
 
-/* Responsywność */
+/* --- RESPONSYWNOŚĆ --- */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 1.8rem; }
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1.1rem; }
+    .premium-services h2 { font-size: 2rem; }
     .main-nav { flex-direction: column; align-items: center; gap: 10px; }
 }
