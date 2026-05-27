@@ -3,17 +3,6 @@
     box-sizing: border-box;
 }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-    background: #1e1e1e;
-}
-.container h2 {
-    color: #fff;
-    margin-bottom: 10px;
-}
-
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -21,6 +10,13 @@ body {
     background-color: #121212; /* Ciemne tło strony */
     color: #e0e0e0;
     line-height: 1.6;
+}
+
+/* Elastyczny kontener bez wymuszonego koloru tła */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* --- MENU NAWIGACYJNE --- */
@@ -134,7 +130,7 @@ body {
 
 /* --- NOWA SEKCJA SPECJALIZACJE (JASNE TŁO) --- */
 .premium-services {
-    background-color: #ffffff; /* Kontrastowe jasne tło */
+    background-color: #ffffff; /* Kontrastowe jasne tło sekcji */
     padding: 80px 0;
     color: #333;
 }
@@ -150,7 +146,6 @@ body {
     position: relative;
 }
 
-/* Dekoracyjna linia pod H2 */
 .premium-services h2::after {
     content: '';
     display: block;
@@ -216,7 +211,7 @@ body {
 
 .form-section h2 {
     color: #fff;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .premium-form {
@@ -259,6 +254,11 @@ body {
     padding: 80px 0;
     text-align: center;
     background-color: #121212;
+}
+
+.map-section h2 {
+    color: #fff;
+    margin-bottom: 10px;
 }
 
 .map-container {
