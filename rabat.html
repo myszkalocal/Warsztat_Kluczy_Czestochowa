@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odbierz swój rabat!</title>
+    <title>Odbierz swój rabat - 5%</title>
     <style>
-        /* Prosty reset i nowoczesna czcionka */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -23,7 +22,6 @@
             padding: 20px;
         }
 
-        /* Główna karta dopasowana do ekranu telefonu */
         .container {
             background-color: #ffffff;
             border-radius: 16px;
@@ -45,6 +43,17 @@
             margin-bottom: 10px;
         }
 
+        .discount-badge {
+            display: inline-block;
+            background-color: #dc2626; /* Czerwony kolor uwagi */
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
         p {
             font-size: 15px;
             color: #666;
@@ -52,41 +61,44 @@
             margin-bottom: 25px;
         }
 
-        /* Sekcja z kodem rabatowym */
         .promo-box {
-            background-color: #f0fdf4; /* Delikatny zielony token */
-            border: 2px dashed #4ade80;
+            background-color: #f8fafc;
+            border: 2px dashed #cbd5e1;
             border-radius: 8px;
             padding: 15px;
             margin-bottom: 25px;
         }
 
         .promo-label {
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #166534;
+            color: #64748b;
             font-weight: bold;
             margin-bottom: 5px;
         }
 
+        /* Stylizacja wygenerowanego kodu */
         .promo-code {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 800;
-            color: #16a34a;
-            letter-spacing: 2px;
+            color: #0f172a;
+            letter-spacing: 1px;
+            background: #e2e8f0;
+            padding: 8px;
+            border-radius: 4px;
+            display: inline-block;
         }
 
         .notice {
             font-size: 12px;
-            color: #999;
-            margin-top: 8px;
+            color: #94a3b8;
+            margin-top: 10px;
         }
 
-        /* Przycisk akcji pod SEO i opinie */
         .btn {
             display: block;
-            background-color: #2563eb; /* Elegancki niebieski */
+            background-color: #2563eb;
             color: white;
             text-decoration: none;
             padding: 14px;
@@ -112,17 +124,18 @@
 
     <div class="container">
         <div class="icon">🎁</div>
+        <div class="discount-badge">-5% NA KOLEJNĄ USŁUGĘ</div>
         <h1>Dziękujemy za wizytę!</h1>
-        <p>Doceniamy, że korzystasz z naszych usług. W podziękowaniu przygotowaliśmy dla Ciebie zniżkę na kolejną wizytę.</p>
+        <p>Doceniamy Twoje zaufanie. Zeskanuj ten kod przy następnej wizycie u taty, aby otrzymać 5% zniżki na wykonaną usługę.</p>
         
-        <!-- Okienko z kodem -->
         <div class="promo-box">
-            <div class="promo-label">Twój kod rabatowy</div>
-            <div class="promo-code">ZUR10</div> 
-            <div class="notice">Zrób zrzut ekranu lub pokaż ten kod przy następnej wizycie</div>
+            <div class="promo-label">Twój jednorazowy kod rabatowy</div>
+            <!-- Tutaj skrypt wstrzyknie wygenerowany kod -->
+            <div class="promo-code" id="code-display">Generowanie...</div> 
+            <div class="notice">Zrób zrzut ekranu. Kod jest przypisany do tego urządzenia i ważny na jedną wizytę.</div>
         </div>
 
-        <!-- Przycisk podbijający SEO / zaangażowanie -->
+        <!-- Przycisk do opinii Google -->
         <a href="https://g.page/r/TWÓJ_LINK_DO_OPINII_GOOGLE/review" target="_blank" class="btn">
             Zostaw opinię w Google ⭐
         </a>
@@ -131,6 +144,10 @@
             &copy; 2026 Kluczserw Częstochowa
         </div>
     </div>
+
+    <script src="rabat.js">
+        
+    </script>
 
 </body>
 </html>
